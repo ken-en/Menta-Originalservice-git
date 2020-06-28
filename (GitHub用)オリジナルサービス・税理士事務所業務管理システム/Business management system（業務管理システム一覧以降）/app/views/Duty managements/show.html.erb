@@ -1,0 +1,16 @@
+<h1>id: <%= @message.id %> の勤務管理 詳細</h1>
+
+<table class="table table-bordered">
+  <tr>
+    <th>id</th>
+    <td><%= @message.id %></td>
+  </tr>
+  <tr>
+    <th>社員名</th>
+    <td><%= @message.Customer %></td>
+  </tr>
+</table>
+
+<%= link_to 'この勤務状況を編集する', edit_message_path(@message), class: 'btn btn-light' %>
+<%= link_to 'この勤務状況を削除する', @message, method: :delete, data: { confirm: '本当に削除してよろしいですか？' }, class: 'btn btn-danger' %>
+<%= link_to '勤務管理一覧に戻る', messages_path, class: "btn btn-primary" %>

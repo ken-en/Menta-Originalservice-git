@@ -1,0 +1,35 @@
+<div class="row">
+  <div class="col-6">
+    <%= form_with(model: message, local: true) do |f| %>
+      <% if message.errors.any? %>
+        <div id="error_explanation" class="alert alert-warning">
+          <ul class="mb-0">
+            <% message.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <div class="form-group">
+        <%= f.label :Customer, '社員名' %>
+        <%= f.text_field :Customer, class: 'form-control' %>
+      </div>
+
+      <p>
+        <label for="duty">勤務：</label>
+        <select id="duty" name="duty">
+        <option value="in">社内勤務</option>
+        <option value="ou">出先・外出</option>
+        <option value="ho">在宅ワーク</option>
+        <option value="la">遅刻</option>
+        <option value="va">休暇</option>
+        <option value="ab">欠勤</option>
+        </select>
+      </p>
+      <%= f.submit '登録', class: 'btn btn-primary' %>
+    <% end %>
+  </div>
+</div>
+
+<%= link_to '勤務管理一覧に戻る', messages_path, class: "btn btn-primary" %>

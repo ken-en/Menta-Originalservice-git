@@ -1,0 +1,24 @@
+<h1>id: <%= @message.id %> の業務内容・状況 詳細</h1>
+
+<table class="table table-bordered">
+  <tr>
+    <th>id</th>
+    <td><%= @message.id %></td>
+  </tr>
+  <tr>
+    <th>会社名</th>
+    <td><%= @message.Customer %></td>
+  </tr>
+  <tr>
+    <th>業務内容</th>
+    <td><%= @message.Business %></td>
+  </tr>
+  <tr>
+    <th>処理期限日</th>
+    <td><%= @message.date %></td>
+  </tr>
+</table>
+
+<%= link_to 'この業務内容・状況を編集する', edit_message_path(@message), class: 'btn btn-light' %>
+<%= link_to 'この業務内容・状況を削除する', @message, method: :delete, data: { confirm: '本当に削除してよろしいですか？' }, class: 'btn btn-danger' %>
+<%= link_to '業務内容・状況一覧に戻る', messages_path, class: "btn btn-primary" %>
