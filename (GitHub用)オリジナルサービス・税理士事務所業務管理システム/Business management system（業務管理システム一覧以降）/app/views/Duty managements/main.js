@@ -1,0 +1,1 @@
+document.getElementById('box').textContent = new Date().toLocaleString();
